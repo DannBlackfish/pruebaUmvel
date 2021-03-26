@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { Routes, RouterModule } from '@angular/router';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -8,7 +10,6 @@ import { InicioComponent } from './inicio/inicio.component';
 import { HedearComponent } from './hedear/hedear.component';
 import { RegistroComponent } from './autenticacion/registro/registro.component';
 import { AutenticacionService } from './servicios/autenticacion.service';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -29,7 +30,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     FormsModule,
     ReactiveFormsModule,
-    // HttpModule
+    HttpClientModule
   ],
   providers: [AutenticacionService],
   bootstrap: [AppComponent]

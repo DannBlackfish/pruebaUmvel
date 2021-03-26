@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { AutenticacionService } from '../../servicios/autenticacion.service';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-registro',
@@ -8,13 +10,34 @@ import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms'
 })
 export class RegistroComponent implements OnInit {
 
-  registroForm: FormGroup;
+  registroForm!: FormGroup;
   userdata: any;
 
-  constructor(private formBuilder: FormBuilder) { }
+  erroresForm = {
+    'email': '',
+    'password': ''
+  }
+
+  mensajesValidacion = {
+    'email': {
+      'required': 'Email obligatorio',
+      'email': 'Introduzca un email válido'
+    },
+    'password': {
+      'required': 'Contraseña obligatoria',
+      'pattern': 'La contraseña debe contener al menos un número y una letra',
+      'minlength': 'y más de 6 caracteres'
+    }
+  }
+
+  constructor(private formBuilder: FormBuilder,
+              private autenticacionService: AutenticacionService,
+              private router: Router,
+              private activateRouter: ActivatedRoute )
+   { }
 
   ngOnInit() {
-    this.registroForm = this.formBuilder.group({
+    this.registroForm! = this.formBuilder.group({
       'email': ['', [ Validators.required, Validators.email ]],
       'password': ['', [
         Validators.required,
@@ -22,18 +45,40 @@ export class RegistroComponent implements OnInit {
         Validators.minLength(6)
       ]]
     })
+
+    this.registroForm.valueChanges.subscribe(data => this.onValueChanged(data));
+    this.onValueChanged();
   }
 
   onSubmit(){
     this.userdata = this.saveUserdata();
+    this.autenticacionService.registroUsuario(this.userdata);
+    this.router.navigate(['/']);
   }
 
   saveUserdata(){
     const saveUserdata = {
-      email: this.registroForm.get('email').value,
-      password: this.registroForm.get('password').value
+      email: this.registroForm.get('email')!.value,
+      password: this.registroForm.get('password')!.value
     }
     return saveUserdata;
   }
+
+  onValueChanged(data?: any) {
+    if (!this.registroForm) { return; }
+    const form = this.registroForm;
+    for (const field in this.erroresForm) {
+
+      this.erroresForm[field] = '';
+      const control = form.get(field);
+      if (control && control.dirty && !control.valid) {
+        const messages = this.mensajesValidacion[field];
+        for (const key in control.errors) {
+          this.erroresForm[field] += messages[key] + ' ';
+        }
+      }
+    }
+  }
+
 
 }
