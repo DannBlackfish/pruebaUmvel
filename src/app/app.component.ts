@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import * as firebase from 'firebase';
+import { AdministracionService } from './servicio/administracion.service'
 
 @Component({
   selector: 'app-root',
@@ -7,6 +8,8 @@ import * as firebase from 'firebase';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
+
+  constructor(private administracionService: AdministracionService) { }
   
   ngOnInit(){
     firebase.initializeApp({
@@ -15,4 +18,12 @@ export class AppComponent implements OnInit {
       
     })
   }
+
+  getAllAdministracion() {
+    this.administracionService.getAllAdministracion()
+    .subscribe(todos => {
+      console.log(todos);
+    })
+  }
+  
 }
