@@ -2,35 +2,19 @@
     <h3 class="title">Lista de Usuarios</h3>
 
 
-    <div class="card-deck">
+    <div class="card-deck" >
         <div class="card">
           <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">First Name</h4>
-            <p class="card-text">Last Name</p>
-            <p class="card-text">Email</p>
-            <p class="card-text"><small class="text-muted">Gender</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This card has supporting text below as a natural lead-in to additional content.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-          </div>
-        </div>
-        <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-block">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This card has even longer content than the first to show that equal height action.</p>
-            <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+          <div class="card-block" *ngFor="let usuario of administracion ">
+            <h4 class="card-title">{{usuario.first_name}}</h4>
+            <p class="card-text">{{usuario.last_name}}</p>
+            <p class="card-text">{{usuario.email}}</p>
+            <p class="card-text"><small class="text-muted">{{usuario.gender}}</small></p>
           </div>
         </div>
       </div>
 
-    <button class="btn btn-primary" (click)="getAllAdministracion()">
+    <button class="btn btn-primary" (click)="ngOnInit()">
     Obten toda la Info
     </button>
 
@@ -38,10 +22,10 @@
     <h2>{{administracion.email}}</h2>
 
 </div> -->
-
+<!-- 
     <button class="btn btn-primary" (click)="getAdministracion()">
     Obten la Info
-    </button>
+    </button> -->
 
 </div>
 

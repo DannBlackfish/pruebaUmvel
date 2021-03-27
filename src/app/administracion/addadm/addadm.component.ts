@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router'
+import { database } from 'firebase';
+
+import { Administracion } from '../../interfaces/administracion'
 import { AdministracionService } from '../../servicio/administracion.service'
 
 
@@ -9,30 +13,30 @@ import { AdministracionService } from '../../servicio/administracion.service'
 })
 export class AddadmComponent implements OnInit {
 
-  // administraciones: Administraciones[] = []
+  administracion: any = Array
 
-  // private pageNum=1;
-  // private query:string;
-  // private hideScrollHeight= 200;
-  // private showScrollHeight= 500;
-
-  constructor(private administracionService: AdministracionService) { }
+  constructor(private administracionService: AdministracionService, 
+              private router:Router) { }
 
   ngOnInit(): void {
-  }
-
-  getAllAdministracion() {
-    this.administracionService.getAllAdministracion()
-    .subscribe(administracion => {
-      console.log(administracion);
+    this.administracionService.getAllAdministracion().subscribe(data => {
+      this.administracion = data
+      console.log(data)
     })
   }
 
-  getAdministracion() {
-    this.administracionService.getAdministracion(1)
-    .subscribe(administracion => {
-      console.log(administracion);
-    })
-  }
+  // getAllAdministracion() {
+  //   this.administracionService.getAllAdministracion()
+  //   .subscribe(administracion => {
+  //     console.log(administracion);
+  //   })
+  // }
+
+  // getAdministracion() {
+  //   this.administracionService.getAdministracion(1)
+  //   .subscribe(administracion => {
+  //     console.log(administracion);
+  //   })
+  // }
 
 }

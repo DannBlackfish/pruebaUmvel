@@ -13,11 +13,12 @@ import { AutenticacionService } from './servicio/autenticacion.service';
 import { InisesComponent } from './autenticacion/inises/inises.component';
 import { AdministracionService } from './servicio/administracion.service';
 import { AddadmComponent } from './administracion/addadm/addadm.component';
+import { GuardService } from './servicio/guard.service'
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
   // { path: '**', component: InicioComponent },
-  { path: 'addadm', component: AddadmComponent },
+  { path: 'addadm', component: AddadmComponent, canActivate: [GuardService] },
   { path: 'registro', component: RegistroComponent},
   { path: 'inises', component: InisesComponent},
 
@@ -40,7 +41,9 @@ const routes: Routes = [
     ReactiveFormsModule,
     HttpClientModule
   ],
-  providers: [AutenticacionService,           AdministracionService],
+  providers: [AutenticacionService,
+              AdministracionService,
+              GuardService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
