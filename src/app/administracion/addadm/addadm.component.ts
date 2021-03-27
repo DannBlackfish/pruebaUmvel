@@ -9,6 +9,13 @@ import { AdministracionService } from '../../servicio/administracion.service'
 })
 export class AddadmComponent implements OnInit {
 
+  // administraciones: Administraciones[] = []
+
+  // private pageNum=1;
+  // private query:string;
+  // private hideScrollHeight= 200;
+  // private showScrollHeight= 500;
+
   constructor(private administracionService: AdministracionService) { }
 
   ngOnInit(): void {
@@ -22,7 +29,7 @@ export class AddadmComponent implements OnInit {
   }
 
   getAdministracion() {
-    this.administracionService.getAdministracion('1')
+    this.administracionService.getAdministracion(1)
     .subscribe(administracion => {
       console.log(administracion);
     })

@@ -15,11 +15,11 @@
         </li>
 
         <li class="nav-item" routerLinkActive="active" *ngIf="!isAuth()">
-          <button class="btn btn-primary" routerLink="/inises">Inicio de Sesión</button>
+          <button class="btn btn-secondary" routerLink="/inises">Inicio de Sesión</button>
         </li>
         
         <li class="nav-item" routerLinkActive="active" *ngIf="isAuth()">
-          <button class="btn btn-primary"
+          <button class="btn btn-secondary"
           (click)="onLogout()">Cerrar Sesión</button>
         </li>
       </ul>

@@ -1,4 +1,4 @@
-<div class="row">
+<div class="row formulario">
     <div class="col col-md"></div>
     <div class="col-10 col-md-6">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -11,7 +11,7 @@
             id="inputPassword"
             formControlName="password">
             <hr>
-            <button type="submit" class="btn btn-primary"> Inicie Sesion </button>
+            <button type="submit" class="btn btn-secondary"> Inicie Sesion </button>
         </form>
         <p class="alert alert-danger" *ngIf="mensaje">
             El usuario o contrasña no es correcto

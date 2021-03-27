@@ -1,0 +1,19 @@
+.background {
+    background: url(https://64.media.tumblr.com/8a706838e579ca0607a3617389b67e1e/tumblr_pbphjcfSmi1u16n75o1_1280.jpg);
+    background-repeat: no-repeat;
+    height: 780px;
+    background-position: center;
+    background-size: cover;
+    margin: 0px;
+    padding: 0px;
+  }
+
+  .title {
+      font-size: 150px;
+      margin: 0px;
+      padding: 50px;
+      text-align: center;
+      background-color: #efefef;
+  }
+
+ 
