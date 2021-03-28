@@ -14,6 +14,8 @@ import { InisesComponent } from './autenticacion/inises/inises.component';
 import { AdministracionService } from './servicio/administracion.service';
 import { AddadmComponent } from './administracion/addadm/addadm.component';
 import { GuardService } from './servicio/guard.service'
+import { GraficaService } from './servicio/grafica.service';
+import { GraficaComponent } from './grafica/grafica.component'
 
 const routes: Routes = [
   { path: '', component: InicioComponent },
@@ -21,6 +23,7 @@ const routes: Routes = [
   { path: 'addadm', component: AddadmComponent, canActivate: [GuardService] },
   { path: 'registro', component: RegistroComponent},
   { path: 'inises', component: InisesComponent},
+  { path: 'grafica', component: GraficaComponent, canActivate: [GuardService] }
 
 ];
 
@@ -31,7 +34,8 @@ const routes: Routes = [
     HedearComponent,
     RegistroComponent,
     InisesComponent,
-    AddadmComponent
+    AddadmComponent,
+    GraficaComponent
   ],
   imports: [
     BrowserModule,
@@ -43,7 +47,8 @@ const routes: Routes = [
   ],
   providers: [AutenticacionService,
               AdministracionService,
-              GuardService],
+              GuardService,
+              GraficaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
