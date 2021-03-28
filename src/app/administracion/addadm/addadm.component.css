@@ -1,13 +1,26 @@
 .admin {
     background-color: #efefef;
     background-repeat: no-repeat;
-    height: 700px;
+    height: 1200px;
     background-position: center;
     background-size: cover;
     margin: 0px;
-    padding: 50px;
+    padding: 40px 120px 0px 120px;
 }
 
 .title {
     text-align: center;
+    margin-bottom: 30px;
+    padding: 0px;
+}
+
+.profile {
+    width: 15px;
+}
+
+.onecard{
+    display: flex;
+    margin: 0px;
+    padding: 0px;
+    width: 303px;
 }

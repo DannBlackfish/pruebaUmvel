@@ -1,19 +1,20 @@
 <div class="row formulario">
+    <img src="https://i.pinimg.com/564x/e1/e5/9b/e1e59bc566e57bab07b825d0da067aba.jpg">
     <div class="col col-md"></div>
-    <div class="col-10 col-md-6">
+    <div class="col-10 col-md-6 margen">
         <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-            <h4>Introduzca sus datos</h4>
-            <label>Correo</label>
+            <h4 class="white title">INTRODUZCA SUS DATOS</h4>
+            <label class="white">Correo</label>
             <input type="mail" class="form-control" id="inputEmail" autofocus
             formControlName="email">
-            <label>Contraseña</label>
+            <label class="white">Contraseña</label>
             <input type="password" class=form-control 
             id="inputPassword"
             formControlName="password">
             <hr>
             <button type="submit" class="btn btn-secondary"> Inicie Sesion </button>
         </form>
-        <p>¿No tienes cuenta? <a routerLink="/registro">Registrate</a></p>
+        <p class="gray distancia">¿No tienes cuenta? <a class="white" routerLink="/registro">Registrate</a></p>
         <p class="alert alert-danger" *ngIf="mensaje">
             El usuario o contrasña no es correcto
         </p>

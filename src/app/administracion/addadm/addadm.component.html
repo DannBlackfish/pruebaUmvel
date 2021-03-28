@@ -1,22 +1,40 @@
 <div class="admin">
-    <h3 class="title">Lista de Usuarios</h3>
+    <h3 class="title">LISTA DE USUARIOS</h3> 
+    <table class="table">
+      <thead class="thead-inverse">
+        <tr>
+          <th>Icon</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Gender</th>
+        </tr>
+      </thead>
+      <tbody *ngFor="let usuario of administracion.users">
+        <tr>
+          <th scope="row"><img class="profile" src="{{usuario.image}}" alt="Card image cap"></th>
+          <td>{{usuario.first_name}}</td>
+          <td>{{usuario.last_name}}</td>
+          <td>{{usuario.email}}</td>
+          <td>{{usuario.gender}}</td>
+        </tr>
+      </tbody>
+    </table>
+</div>
 
-
-    <div class="card-deck" >
-        <div class="card">
-          <img class="card-img-top" src="..." alt="Card image cap">
-          <div class="card-block" *ngFor="let usuario of administracion ">
+        <!-- <div class="card onecard" style="margin: 20px;" *ngFor="let usuario of administracion.users">
+          <img class="card-img-top profile" src="{{usuario.image}}" alt="Card image cap">
+          <div class="card-block" >
             <h4 class="card-title">{{usuario.first_name}}</h4>
             <p class="card-text">{{usuario.last_name}}</p>
             <p class="card-text">{{usuario.email}}</p>
             <p class="card-text"><small class="text-muted">{{usuario.gender}}</small></p>
           </div>
-        </div>
-      </div>
+        </div> -->
 
-    <button class="btn btn-primary" (click)="ngOnInit()">
-    Obten toda la Info
-    </button>
+<!-- <button class="btn btn-primary" (click)="ngOnInit()">
+  Obten toda la Info
+  </button> -->
 
 <!-- <div>
     <h2>{{administracion.email}}</h2>
@@ -26,6 +44,3 @@
     <button class="btn btn-primary" (click)="getAdministracion()">
     Obten la Info
     </button> -->
-
-</div>
-

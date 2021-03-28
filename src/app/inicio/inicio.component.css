@@ -9,10 +9,11 @@
   }
 
   .title {
-      font-size: 150px;
+      font-size: 120px;
       margin: 0px;
       padding: 50px;
       text-align: center;
+      color: #333333;
       background-color: #efefef;
   }
 

@@ -2,26 +2,26 @@
     <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <a class="navbar-brand" routerLink="/">UmvelPrueba</a>
+    <a class="navbar-brand" routerLink="/"><img class="logo" src="https://res.cloudinary.com/dannblackfish/image/upload/v1616879397/pruebaUmvel/logos_Mesa_de_trabajo_1_oabdkd.png"></a>
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }"
         *ngIf="isAuth()">
           <a class="nav-link" routerLink="/">Home</a>
         </li>
-
         <li class="nav-item" routerLinkActive="active" *ngIf="isAuth()">
           <a class="nav-link" routerLink="/addadm">Administración de Usuarios</a>
         </li>
-
-        <li class="nav-item" routerLinkActive="active" *ngIf="!isAuth()">
-          <button class="btn btn-secondary" routerLink="/inises">Inicio de Sesión</button>
-        </li>
-        
-        <li class="nav-item" routerLinkActive="active" *ngIf="isAuth()">
-          <button class="btn btn-secondary"
-          (click)="onLogout()">Cerrar Sesión</button>
-        </li>
       </ul>
     </div>
+    <ul class="nav justify-content-end">
+      <li class="nav" routerLinkActive="active" *ngIf="!isAuth()">
+        <button class="btn btn-secondary" routerLink="/inises">Inicio de Sesión</button>
+      </li>
+      <li class="nav-item" routerLinkActive="active" *ngIf="isAuth()">
+        <button class="btn btn-secondary"
+        (click)="onLogout()">Cerrar Sesión</button>
+      </li>
+
+    </ul>
   </nav>

@@ -1,0 +1,30 @@
+.formulario {
+    background-color: #efefef;
+    height: 730px;
+    background-position: center;
+    background-size: cover;
+    margin: 0px;
+    padding: 50px;
+}
+
+.title{
+    font-size: 25px;
+    text-align: center;
+}
+
+.color {
+    background-color: black;
+}
+
+.black {
+    color: black;
+}
+
+.gray {
+    color: slategrey;
+}
+
+.distancia {
+    margin-top: 10px;
+}
+

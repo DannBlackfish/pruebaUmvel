@@ -1,8 +1,8 @@
-<div class="row">
+<div class="row formulario">
     <div class="col col-md"></div>
     <div class="col-10 col-md-6">
         <form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
-            <h4>Introduzca sus datos de registro</h4>
+            <h4 class="title">REGISTRATE</h4>
             <label>Correo</label>
             <input type="mail" class="form-control" id="inputEmail" autofocus
             formControlName="email">
@@ -17,10 +17,10 @@
                 {{ erroresForm.password }}
             </p>
             <hr>
-            <button type="submit" class="btn btn-primary"
-            [disabled]="!registroForm.valid"> Registrar</button>
+            <button type="submit" class="btn btn-primary color"> Registrar</button>
         </form>
-        <p>¿Ya tienes una cuenta? <a routerLink="/inises">Inicia Sesión</a></p>
+        <p class="gray distancia">¿Ya tienes una cuenta? <a routerLink="/inises" class="black">Inicia Sesión</a></p>
     </div>
     <div class="col col-md"></div>
+    <img src="https://i.pinimg.com/564x/de/6d/ba/de6dba741ff5b5dd3de86b0c854f8823.jpg">
 </div>

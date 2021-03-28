@@ -13,7 +13,7 @@ import { AdministracionService } from '../../servicio/administracion.service'
 })
 export class AddadmComponent implements OnInit {
 
-  administracion: any = Array
+  administracion: any 
 
   constructor(private administracionService: AdministracionService, 
               private router:Router) { }
