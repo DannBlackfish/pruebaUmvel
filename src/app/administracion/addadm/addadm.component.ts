@@ -24,19 +24,5 @@ export class AddadmComponent implements OnInit {
       console.log(data)
     })
   }
-
-  // getAllAdministracion() {
-  //   this.administracionService.getAllAdministracion()
-  //   .subscribe(administracion => {
-  //     console.log(administracion);
-  //   })
-  // }
-
-  // getAdministracion() {
-  //   this.administracionService.getAdministracion(1)
-  //   .subscribe(administracion => {
-  //     console.log(administracion);
-  //   })
-  // }
-
+  
 }
